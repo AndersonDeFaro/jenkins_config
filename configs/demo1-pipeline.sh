@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo yum -y update
+echo 'Teste demo 1 - Pipeline'
