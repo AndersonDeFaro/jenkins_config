@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yum -y update
+sudo yum -y update
