@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('Execute 1 ansible') {
             steps {
-                sh 'ansible-galaxy collection install -r ../ansible/requirements.yml'
-                sh 'ansible-playbook -i ../ansible/hosts.conf --private-key=$ANSIBLE_PRIVATE_KEY ../ansible/playbooks/mariadb.yml'
+                sh 'ansible-galaxy collection install -r configs/ansible/requirements.yml'
+                sh 'ansible-playbook -i configs/ansible/hosts.conf --private-key=$ANSIBLE_PRIVATE_KEY configs/ansible/playbooks/mariadb.yml'
             }
         }
     }
