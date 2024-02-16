@@ -1,12 +1,6 @@
 pipeline {
     agent any
     stages {
-        state ('Ping server - Debian 12') {
-            steps {
-                sh 'ping 192.168.56.10'
-                sh 'ping debian12'
-            }
-        }
         stage ('Execute exemplo 1 - ansible') {
             steps {
                 ansiblePlaybook become: true, 
