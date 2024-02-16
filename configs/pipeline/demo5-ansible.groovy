@@ -2,7 +2,8 @@ pipeline {
     agent any
     stages {
         state ('Ping server - Debian 12') {
-            step {
+            steps {
+                sh 'ping 192.168.56.10'
                 sh 'ping debian12'
             }
         }
