@@ -1,0 +1,5 @@
+- hosts: all
+  tasks: 
+   - shell: 'configs/shell/demo1-pipeline.sh'
+  args:
+    chdir: '~/'
