@@ -2,4 +2,4 @@
 - hosts: all
   name: 'Execute Shell Script em Server'
   tasks: 
-   - shell: '$WORKSPACE/configs/shell/demo1-pipeline.sh'
+   - script: $WORKSPACE/configs/shell/demo1-pipeline.sh
