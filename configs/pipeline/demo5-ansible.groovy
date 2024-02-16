@@ -1,9 +1,20 @@
 pipeline {
-    agent any
+    agent any 
     stages {
-        stage ('Execute exemplo 1 - ansible') {
+        stage ('Check gitHub') {
             steps {
-                sh "ansible Debian -u vagrant --private-key=configs/ansible/ssh_private/id_rsa_fedora38.key -i configs/ansible/hosts.conf -m shell -a 'echo Hello, World'"
+                echo 'Checkout git repo'
+                git branch: 'main', credentialsId: 'gitHub', url: 'https://github.com/AndersonDeFaro/jenkins_config.git'
+            }
+        }
+        stage ('Execute execute teste ansible') {
+            steps {
+                ansiblePlaybook become: true, 
+                                credentialsId: 'ssh_vagrant', 
+                                disableHostKeyChecking: true, 
+                                installation: 'ansible', 
+                                inventory: 'configs/ansible/hosts.conf', 
+                                playbook: 'configs/ansible/playbooks/apt-update-all.yml'
             }
         }
     }
