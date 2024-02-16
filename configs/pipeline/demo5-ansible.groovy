@@ -1,12 +1,9 @@
 pipeline {
     agent any
-    environment {
-        ANSIBLE_PRIVATE_KEY=credentials('id-rsa-vagrant') 
-    }
     stages {
         stage ('Execute exemplo 1 - ansible') {
             steps {
-                sh 'ansible-playbook -i configs/ansible/hosts.conf --private-key=$ANSIBLE_PRIVATE_KEY configs/ansible/playbooks/apt-update-all.yml'
+                sh "ansible Debian -u vagrant --private-key=configs/ansible/ssh_private/id_rsa_fedora38.key -i configs/ansible/hosts.conf -m shell -a 'echo Hello, World'"
             }
         }
     }
