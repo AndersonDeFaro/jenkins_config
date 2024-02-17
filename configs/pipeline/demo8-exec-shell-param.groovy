@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     stages {
@@ -17,14 +16,15 @@ pipeline {
 				sh 'chmod u+x ${WORKSPACE}/configs/shell/demo1-pipeline.sh'
 			}
 		}
-		stage ('Execute teste ansible') {
+		stage ('Execute teste ansible param') {
 			steps {
 				ansiblePlaybook become: true, 
 								credentialsId: 'ssh_vagrant', 
 								disableHostKeyChecking: true, 
+								extras: '--extra-vars "path_script=${WORKSPACE}/configs/shell/demo1-pipeline.sh"',
 								installation: 'ansible', 
 								inventory: 'configs/ansible/hosts.conf', 
-								playbook: 'configs/ansible/playbooks/exec-shell-script.yml'
+								playbook: 'configs/ansible/playbooks/exec-shell-script-param.yml'
 			}
 		}
     }
