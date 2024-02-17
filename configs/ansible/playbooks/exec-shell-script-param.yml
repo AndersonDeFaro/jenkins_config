@@ -2,4 +2,4 @@
 - hosts: all
   name: 'Execute Shell Script em Server com Parametros'
   tasks: 
-   - script: {{ path_project }} configs/shell/demo1-pipeline.sh
+   - script: {{ env.path_project }} 'configs/shell/demo1-pipeline.sh'
