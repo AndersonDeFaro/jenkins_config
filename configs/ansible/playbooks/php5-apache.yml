@@ -3,7 +3,7 @@
   tasks:
     - name: 'Instala o PHP'
       apt:
-        name: php8*
+        name: php8.2
         state: latest
       become: yes
     - name: 'Instala o Apache2'
@@ -13,6 +13,6 @@
       become: yes
     - name: 'Instala o ModPHP'
       apt: 
-        name: libapache2-mod-php
+        name: libapache2-mod-php8.2
         state: latest
       become: yes
