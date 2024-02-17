@@ -1,6 +1,5 @@
 ---
 - hosts: all
   name: 'Execute Shell Script em Server com Parametros'
-  became: yes
   tasks: 
    - shell: "{{ path_project }} /configs/shell/demo1-pipeline.sh"
