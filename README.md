@@ -14,7 +14,7 @@
 ### Dir: Configs 
     -> Configurações que serão aplicadas a partir do Jenkins com Ansible
 
-    Foi construido 2 scripts equivalentes, a diferença é que a pipeline está no Jenkins e o outro foi criado um arquivo Groove para ser carregado via Pipeline SCM.
+    Foi construido 2 scripts equivalentes, a diferença é que a pipeline está no Jenkins e o outro foi criado um arquivo Groovy para ser carregado via Pipeline SCM.
 
     Demo 1 -> Demo 3
     Demo 2 -> Demo 4
