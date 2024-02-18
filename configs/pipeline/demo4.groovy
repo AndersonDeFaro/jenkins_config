@@ -4,7 +4,9 @@ pipeline {
         stage ('Check gitHub') {
             steps {
                 echo 'Checkout git repo'
-                git branch: 'main', credentialsId: 'gitHub', url: 'https://github.com/AndersonDeFaro/jenkins_config.git'
+                git branch: 'main', 
+                    credentialsId: 'gitHub', 
+                    url: 'https://github.com/AndersonDeFaro/jenkins_config.git'
             }
         }
         stage ('Execute script Demo 2') {
