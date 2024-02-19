@@ -12,7 +12,6 @@
         - php8.2-gd
         - php8.2-mcrypt
         - default-mysql-server
-        - default-mysql-client
         - php8.2-mysql
 
     - name: 'Cria o banco do MySQL'
@@ -20,3 +19,5 @@
         name: wordpress_db
         login_user: root
         state: present
+      become: yes
+      ansible_python_interpreter: /usr/bin/python3
