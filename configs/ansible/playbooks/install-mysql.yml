@@ -3,7 +3,7 @@
   tasks:
     - name: "Instalar pip3"
       apt:
-        name: pip3
+        name: python3-pip
         state: latest
     - name: "Instalar pyMySql"
       pip: 
