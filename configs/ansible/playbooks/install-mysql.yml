@@ -1,8 +1,8 @@
 ---
 - hosts: all
+  name: "Cria o banco do MySQL"  # Corrected indentation and quotes
   tasks:
-    - name: "Cria o banco do MySQL"  # Corrected indentation and quotes
-      mysql_db:
+    - mysql_db:
         name: wordpress_db
         login_user: root
         state: present
