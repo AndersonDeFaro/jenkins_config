@@ -15,7 +15,7 @@ pipeline {
                                 disableHostKeyChecking: true, 
                                 installation: 'ansible', 
                                 inventory: 'configs/ansible/hosts.conf', 
-                                playbook: 'configs/ansible/playbooks/php5-apache.yml'
+                                playbook: 'configs/ansible/playbooks/php-apache-itens.yml'
             }
         }
     }
