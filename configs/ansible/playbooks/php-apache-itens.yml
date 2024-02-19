@@ -13,7 +13,6 @@
         - php8.2-mcrypt
         - default-mysql-server
         - php8.2-mysql
-
     - name: 'Cria o banco do MySQL'
       mysql_db: 
         name: wordpress_db
