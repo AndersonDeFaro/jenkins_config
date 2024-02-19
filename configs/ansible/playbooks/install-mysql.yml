@@ -1,6 +1,14 @@
 ---
 - hosts: all
   tasks:
+    - name: "Instalar pip3"
+      apt:
+        name: pip3
+        state: latest
+    - name: "Instalar pyMySql"
+      pip: 
+        nane: pymysql
+        state: preset
     - name: "Cria o banco do MySQL" 
       community.mysql.mysql_db:
         name: wordpress_db
