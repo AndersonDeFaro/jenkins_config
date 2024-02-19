@@ -3,8 +3,8 @@
   name: "Cria o banco do MySQL"  # Corrected indentation and quotes
   tasks:
     - mysql_db:
-        name: wordpress_db
-        login_user: root
-        state: present
+        - name: wordpress_db
+          login_user: root
+          state: present
       become: yes
       ansible_python_interpreter: /usr/bin/python3
