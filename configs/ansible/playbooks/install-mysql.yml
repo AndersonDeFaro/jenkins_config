@@ -3,8 +3,8 @@
   tasks:        
     - name: 'Cria o banco do MySQL'
       mysql_db: 
-        name: wordpress_db
-        login_user: root
-        state: present
+        - name: wordpress_db
+          login_user: root
+          state: present
       become: yes
       ansible_python_interpreter: /usr/bin/python3
