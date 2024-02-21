@@ -14,6 +14,7 @@
         state: present
         login_user: dba
     - name: "Criar o User Database com todos os privilegios"
+      login_user: dba
       community.mysql.mysql_user:
         name: bob
         password: 12345
