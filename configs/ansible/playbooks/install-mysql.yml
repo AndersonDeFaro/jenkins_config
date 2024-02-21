@@ -13,4 +13,4 @@
         name: wordpress_db
         state: present
         login_user: root
-      became: yes
+        became: yes
