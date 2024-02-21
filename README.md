@@ -18,3 +18,8 @@
 
     Demo 1 -> Demo 3
     Demo 2 -> Demo 4
+
+    # Desafios
+    No curso que estou fazendo na Alura o material está bem defasado, por esse motivo estou passando algumas dificuldade e tendo que ajustar os código de acorodo com o que tenho
+    sentido necessidade.
+    Ex 1 .: Uso do comando 'community.mysql.mysql_db' e criação de um usuário DBA pela dificuldade de acesso ao usuário ROOT do MySQL.
