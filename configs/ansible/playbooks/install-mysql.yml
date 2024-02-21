@@ -12,3 +12,5 @@
       community.mysql.mysql_db:
         name: wordpress_db
         state: present
+        login_user: dba
+        
