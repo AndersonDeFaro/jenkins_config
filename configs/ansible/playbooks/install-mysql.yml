@@ -8,7 +8,7 @@
       with_items:
         - python3-pymysql
         - python3-pip
-        
+    - name: "Criar BD mySQL"
       became: yes
       community.mysql.mysql_db:
         name: wordpress_db
