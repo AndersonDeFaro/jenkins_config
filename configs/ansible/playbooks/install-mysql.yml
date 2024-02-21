@@ -3,12 +3,11 @@
   tasks:
     - name: "Instalar pip3"
       apt:
-        name: python3-pip
+        name: "{{ item }}"
         state: latest
-    - name: "Instalar pyMySql"
-      pip: 
-        nane: pymysql
-        state: preset
+      with_items:
+        - python3-pymysql
+        - python3-pip
     - name: "Cria o banco do MySQL" 
       community.mysql.mysql_db:
         name: wordpress_db
