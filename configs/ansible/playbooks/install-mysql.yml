@@ -16,7 +16,7 @@
     - name: "Criar o User Database com todos os privilegios"      
       community.mysql.mysql_user:
         login_user: dba
-        name: bob
+        name: wordpress_user
         password: 12345
-        priv: '*.*:ALL,GRANT'
+        priv: 'wordpress_db.*:ALL'
         state: present  
