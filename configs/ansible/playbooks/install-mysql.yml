@@ -9,7 +9,6 @@
         - python3-pymysql
         - python3-pip
     - name: "Criar BD mySQL"
-      became: yes
-      mysql_db:
+      community.mysql.mysql_db:
         name: wordpress_db
         state: present
