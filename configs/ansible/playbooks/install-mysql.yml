@@ -9,6 +9,7 @@
         - python3-pymysql
         - python3-pip
     - name: "Cria o banco do MySQL" 
+      became: yes
       community.mysql.mysql_db:
         name: wordpress_db
         state: present
