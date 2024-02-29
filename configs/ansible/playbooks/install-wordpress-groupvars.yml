@@ -36,11 +36,11 @@
         - { regex: 'username_here', value: "{{ wp_username }}"}
         - { regex: 'password_here', value: "{{ wp_user_password }}"}
       become: yes
-    - name: 'Configura Apache para servir o Wordpress'
-      copy:
+    - name: ' Configura Apache para servir Wordpress'
+      template:
         src: "{{ path_default }}"
         dest: '/etc/apache2/sites-available/000-default.conf'
       become: yes
-      notify:
+      notify: 
         - restart apache
 

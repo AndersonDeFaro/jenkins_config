@@ -51,7 +51,7 @@ pipeline {
                                 credentialsId: 'ssh_vagrant', 
                                 disableHostKeyChecking: true, 
                                 installation: 'ansible', 
-                                extras: '--extra-vars "path_default=${WORKSPACE}/configs/files/000-default.conf"',
+                                extras: '--extra-vars "path_default=${WORKSPACE}/configs/templates/000-default.conf.j2"',
                                 inventory: 'configs/ansible/hosts.conf', 
                                 playbook: 'configs/ansible/playbooks/install-wordpress-groupvars.yml'
             }
