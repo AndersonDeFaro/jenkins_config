@@ -1,0 +1,44 @@
+---
+- hosts: all
+  handlers: # Local para configurar chamadas ser serviços
+    - name: restart apache
+      service:
+        name: apache2
+        state: restarted
+      become: yes
+  tasks:
+    - name: 'Baixa o arquivo de instalacao do Wordpress'
+      get_url:
+        url: https://wordpress.org/latest.tar.gz'
+        dest: '/tmp/wordpress.tar.gz'
+    - name: 'Descompacta o wordpress'
+      unarchive:
+        src: '/tmp/wordpress.tar.gz'
+        dest: /var/www/
+        remote_src: yes
+      become: yes
+    - name: 'Criar copia do arquivo wp-config-sample.php'
+      copy:
+        src: "{{ wp_installation_dir }}/wp-config-sample.php"
+        dest: "{{ wp_installation_dir }}/wp-config.php"
+        remote_src: yes
+      become: yes     
+    - name: 'Configura o wp-config com as entradas do banco de dados'     
+      replace:
+        path: "{{ wp_installation_dir }}/wp-config.php"
+        regexp: "{{ item.regex }}"
+        replace: "{{ item.value }}"
+        backup: yes
+      with_items: # Essa lista é controlada pela variavel {{ item }}
+        - { regex: 'database_name_here', value: "{{ wp_db_name }}"}
+        - { regex: 'username_here', value: "{{ wp_username }}"}
+        - { regex: 'password_here', value: "{{ wp_user_password }}"}
+      become: yes
+    - name: 'Configura Apache para servir o Wordpress'
+      copy:
+        src: "{{ path_default }}"
+        dest: '/etc/apache2/sites-available/000-default.conf'
+      become: yes
+      notify:
+        - restart apache
+
