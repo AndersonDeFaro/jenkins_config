@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  vars_files:
+    - /etc/ansible/group_vars/all.yml
   tasks:
     - name: "Instalar pip3"
       apt:
