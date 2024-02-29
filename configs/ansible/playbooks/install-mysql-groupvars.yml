@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  vars_files:
+  vars_files:  # Caminho do arquivo group_vars que foi carregado na pipeline
     - /etc/ansible/group_vars/all.yml
   tasks:
     - name: "Instalar pip3"
