@@ -57,4 +57,16 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            script {
+                slackSend(channel: "pipeline-todolist", message: "JOB: ${JOB_NAME} executado com sucesso!")
+            }
+        }
+        failure {
+           script {
+                slackSend(channel: "pipeline-todolist", message: "JOB: ${JOB_NAME} com problema na execução!")
+            }
+       }
+    }
 }

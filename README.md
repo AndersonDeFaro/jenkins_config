@@ -23,3 +23,11 @@
     No curso que estou fazendo na Alura o material está bem defasado, por esse motivo estou passando algumas dificuldade e tendo que ajustar os código de acorodo com o que tenho
     sentido necessidade.
     Ex 1 .: Uso do comando 'community.mysql.mysql_db' e criação de um usuário DBA pela dificuldade de acesso ao usuário ROOT do MySQL.
+
+### Configurações relavantes para o Jenkins
+
+#### Usar o plugin: Locale
+  -> Setar a linguage English (EN) como Default pra acabar com a bagunça de linguagem que fica no browser
+
+#### Usar o plugin: Slack Notification
+  -> Usar o plugin slack para gerar notificações e identificar a situação dos jobs / pipelines
