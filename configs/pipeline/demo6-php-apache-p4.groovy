@@ -1,13 +1,6 @@
 pipeline {
     agent any 
     stages {
-		stage ('GitClone - gitHub') {
-			steps {
-				git branch: 'main', 
-					credentialsId: 'gitHub', 
-					url: 'https://github.com/AndersonDeFaro/jenkins_config.git'
-			}
-		}
 		stage ('Atualizar arquivo apache2 Conf') {
 			steps {
 				echo 'Permissão - 000-default.conf'
